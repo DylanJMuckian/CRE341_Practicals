@@ -3,20 +3,20 @@ using UnityEngine.AI;
 
 public class FSM_ChasePathfind : StateMachineBehaviour
 {
-    GameObject Player, NPC_00;
+    GameObject Player, Brian;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Player = GameObject.Find("Player");
-        NPC_00 = GameObject.Find("NPC_00");
+        Brian = GameObject.Find("Brian");
         // NPC_00.GetComponent<NavMeshAgent>().enabled = true;
-        NPC_00.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
+        Brian.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        NPC_00.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
+        Brian.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
