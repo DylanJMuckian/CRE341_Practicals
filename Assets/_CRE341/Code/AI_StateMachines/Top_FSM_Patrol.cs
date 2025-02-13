@@ -5,9 +5,9 @@ public class Top_FSM_Patrol : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameObject NPC_00 = GameObject.Find("NPC_00");
+        GameObject Brian = GameObject.Find("Brian");
         // get AIState_Patrol child in NPC_000
-        GameObject AIState_Patrol = NPC_00.transform.Find("AIState_Patrol").gameObject;
+        GameObject AIState_Patrol = Brian.transform.Find("AIState_Patrol").gameObject;
         // access animator component of AIState_Patrol
         Animator AIState_Patrol_animator = AIState_Patrol.GetComponent<Animator>();
         // rebind AIState_Patrol

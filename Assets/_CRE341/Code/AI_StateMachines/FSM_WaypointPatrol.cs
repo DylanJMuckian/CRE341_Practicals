@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class FSM_WaypointPatrol : StateMachineBehaviour
 {
-    GameObject NPC_00;
+    GameObject Brian;
 
     // list of gameObject waypoints
     List<GameObject> waypoints;
@@ -22,8 +22,8 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
 
-        NPC_00 = GameObject.Find("NPC_00");
-        NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+        Brian = GameObject.Find("Brian");
+        Brian.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -33,10 +33,10 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         Debug.Log("On State Update ~ Patrol State");
 
         // get parent object of the object containing the animator
-        if (Vector3.Distance(NPC_00.transform.position, WaypointTarget.position) < 0.1f)
+        if (Vector3.Distance(Brian.transform.position, WaypointTarget.position) < 0.1f)
         {
             WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
-            NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+            Brian.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
         }
         
         //NPC_00.transform.position = Vector3.MoveTowards(animator.transform.position, WaypointTarget.position, GameManager.Instance.NPC_AI_01.Speed * Time.deltaTime);
