@@ -70,7 +70,12 @@ public class MapGenerator : MonoBehaviour {
 			SpawnWayPoints(numberWaypoints);
 			SpawnNPCs(numberOfNPCs);
 		}
-	}
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlacePlayer();
+        }
+    }
 
 	void GenerateMap() {
 		map = new int[width,height];
@@ -456,11 +461,39 @@ public class MapGenerator : MonoBehaviour {
 
 	
 	// another approach that didn't quite work
-	private void PlacePlayer()
+	public void PlacePlayer()
     {
+		Debug.Log("Restart");
         Vector3 randomPlayerPos = GetRandomGroundPoint();
+        Debug.Log("Player Pos: " + randomPlayerPos);
 
-		player.transform.position = randomPlayerPos;
+        player.transform.position = randomPlayerPos;
+
+
+            Vector3 randomNPCPos = Vector3.zero;
+            bool validPositionFound = false;
+            int attempts = 0;
+
+            while (!validPositionFound && attempts < maxAttempts)
+            {
+				randomPlayerPos = GetRandomGroundPoint();
+				if (randomPlayerPos != Vector3.zero)
+                {
+					// need to ceck for valid position
+
+                }
+                attempts++;
+            }
+
+            if (validPositionFound)
+            {
+				player.transform.position = randomPlayerPos;
+			}
+            else
+            {
+                Debug.LogWarning("Failed to find a valid NavMesh point for NPC.");
+            }
+
     }
 	
     // Call this method to obtain a random point on an object tagged "Ground".
