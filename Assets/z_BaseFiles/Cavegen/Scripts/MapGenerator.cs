@@ -10,7 +10,7 @@ using UnityEditor.ShaderGraph.Internal;
 public class MapGenerator : MonoBehaviour {
 
 	public GameObject player; // Reference to your player prefab
-	public GameObject npcPrefab, waypointsPrefab; // Reference to your NPC prefab
+	public GameObject npcPrefab, waypointsPrefab, coinPrefab; // Reference to your NPC prefab
 	public GameObject groundObject;
 	public int width;
 	public int height;
@@ -25,8 +25,10 @@ public class MapGenerator : MonoBehaviour {
 	[SerializeField] List<GameObject> npcs = new List<GameObject>();
 	[SerializeField] int numberWaypoints = 4;
 	[SerializeField] List<GameObject> waypoints = new List<GameObject>();
+    [SerializeField] List<GameObject> coins = new List<GameObject>();
+    [SerializeField] int numberOfCoins = 5;
 
-	int[,] map;
+    int[,] map;
 
 	[SerializeField] public NavMeshSurface surface;
 	[SerializeField] private float raycastHeight = 50f; // Height above the plane from which to cast rays.
@@ -49,7 +51,8 @@ public class MapGenerator : MonoBehaviour {
 
 		SpawnWayPoints(numberWaypoints);
 		SpawnNPCs(numberOfNPCs);
-	}
+        SpawnCoins(numberOfCoins);
+    }
 
 
 
@@ -69,6 +72,7 @@ public class MapGenerator : MonoBehaviour {
 
 			SpawnWayPoints(numberWaypoints);
 			SpawnNPCs(numberOfNPCs);
+			SpawnCoins(numberOfCoins);
 		}
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -596,5 +600,44 @@ public class MapGenerator : MonoBehaviour {
 			}
 		}
     }
+
+    private void SpawnCoins(int count)
+    {
+        int maxAttempts = 1000;
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 randomCoinPos = Vector3.zero;
+            bool validPositionFound = false;
+            int attempts = 0;
+
+            while (!validPositionFound && attempts < maxAttempts)
+            {
+                randomCoinPos = GetRandomGroundPoint();
+                if (randomCoinPos != Vector3.zero)
+                {
+                    NavMeshHit hit;
+                    if (NavMesh.SamplePosition(randomCoinPos, out hit, 1.0f, NavMesh.AllAreas))
+                    {
+                        randomCoinPos = hit.position;
+                        validPositionFound = true;
+                    }
+                }
+                attempts++;
+            }
+
+            if (validPositionFound)
+            {
+                Instantiate(coinPrefab, randomCoinPos, Quaternion.identity);
+                // add the NPC to the list
+                coins.Add(coinPrefab);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to find a valid NavMesh point for NPC.");
+            }
+        }
+    }
+
+
 
 }
