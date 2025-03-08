@@ -15,7 +15,7 @@ public class ScoreManager2 : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "collected: " + score;
+        scoreText.text = "Collected: " + score;
     }
 
 }
