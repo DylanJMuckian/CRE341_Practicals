@@ -1,11 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor.Build.Content;
 
 public class GM : MonoBehaviour
 {
     // Singleton instance
     public static GM Inst { get; private set; }
+
+    public int totalCollectibles = 5;  // Set this in the inspector
+    private int collectedCount = 0;
+
+    //public GameObject winScreen;
+   // public static GameManager instance;
 
     #region State machine for scene management
     public enum GameState
@@ -37,7 +44,37 @@ public class GM : MonoBehaviour
 
         // Set initial game state 
         currentState = GameState.Level_1;
+
+        // Win screen code
+        //if (instance == null)
+        //{
+            //instance = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
+
+    //public void CollectItem()
+    //{
+      //  collectedCount++;
+        
+       // if (collectedCount >= totalCollectibles)
+        //{
+          //  ShowWinScreen();
+        //}
+    //}
+
+    //void ShowWinScreen()
+    //{
+     //   winScreen.SetActive(true);
+    //}
+
+   // public void RestartGame()
+    //{
+      //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+   // }
 
     // Method to change the game state and load a new scene
     #region scene management methods
