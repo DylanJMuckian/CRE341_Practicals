@@ -11,8 +11,8 @@ public class GM : MonoBehaviour
     public int totalCollectibles = 5;  // Set this in the inspector
     private int collectedCount = 0;
 
-    //public GameObject winScreen;
-   // public static GameManager instance;
+    public GameObject winScreen;
+    public static GM instance;
 
     #region State machine for scene management
     public enum GameState
@@ -45,36 +45,36 @@ public class GM : MonoBehaviour
         // Set initial game state 
         currentState = GameState.Level_1;
 
-        // Win screen code
-        //if (instance == null)
-        //{
-            //instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
+         //  Win screen code
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    //public void CollectItem()
-    //{
-      //  collectedCount++;
+    public void CollectItem()
+    {
+        collectedCount++;
         
-       // if (collectedCount >= totalCollectibles)
-        //{
-          //  ShowWinScreen();
-        //}
-    //}
+        if (collectedCount >= totalCollectibles)
+        {
+            ShowWinScreen();
+        }
+    }
 
-    //void ShowWinScreen()
-    //{
-     //   winScreen.SetActive(true);
-    //}
+    void ShowWinScreen()
+    {
+        winScreen.SetActive(true);
+    }
 
-   // public void RestartGame()
-    //{
-      //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-   // }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     // Method to change the game state and load a new scene
     #region scene management methods
