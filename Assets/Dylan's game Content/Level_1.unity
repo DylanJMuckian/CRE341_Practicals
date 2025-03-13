@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1559428518}
-  npcPrefab: {fileID: 2286358169494211035, guid: a884620a414a9f948867359c297b2ae6, type: 3}
+  npcPrefab: {fileID: 6469297496258522963, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
   waypointsPrefab: {fileID: 8560873365045129249, guid: 60359ab39d3ed3f42ab598c7b21b9ebd, type: 3}
   coinPrefab: {fileID: 3651568075111793601, guid: 8d89c6f486e175245a25e1e8626f865e, type: 3}
   groundObject: {fileID: 631091595}
@@ -264,7 +264,7 @@ MonoBehaviour:
   seed: 0
   useRandomSeed: 1
   randomFillPercent: 48
-  numberOfNPCs: 5
+  numberOfNPCs: 1
   npcs: []
   numberWaypoints: 4
   waypoints: []
@@ -2539,71 +2539,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
---- !u!1001 &8943347001003783730
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6487945
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 27.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2264624694001071824, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4494764991485893016, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1559428518}
-    - target: {fileID: 6469297496258522963, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_Name
-      value: Brian
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469297496258522963, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2620,7 +2555,6 @@ SceneRoots:
   - {fileID: 509230443}
   - {fileID: 1128548780}
   - {fileID: 320919901}
-  - {fileID: 8943347001003783730}
   - {fileID: 1313956645}
   - {fileID: 1138357718}
   - {fileID: 1051734115}
