@@ -9,6 +9,7 @@ TagManager:
   - Walls
   - NPC
   - Waypoint
+  - Collectible
   layers:
   - Default
   - TransparentFX

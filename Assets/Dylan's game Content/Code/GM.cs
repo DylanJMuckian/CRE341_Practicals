@@ -10,6 +10,7 @@ public class GM : MonoBehaviour
 
     public int totalCollectibles = 5;  // Set this in the inspector
     private int collectedCount = 0;
+    public GameObject Collectible;
 
     public GameObject winScreen;
     public static GM instance;
