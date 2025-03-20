@@ -16,7 +16,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // debug statement 
-        Debug.Log("Entering Patrol State");
+        // Debug.Log("Entering Patrol State");
 
         // get all waypoints with tag Waypoint
         waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
@@ -30,7 +30,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Debug log showing the current state
-        Debug.Log("On State Update ~ Patrol State");
+        //Debug.Log("On State Update ~ Patrol State");
 
         // get parent object of the object containing the animator
         if (Vector3.Distance(Brian.transform.position, WaypointTarget.position) < 0.1f)
@@ -46,7 +46,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // debug statement 
-        Debug.Log("Exiting Patrol State");
+       // Debug.Log("Exiting Patrol State");
     }
 
 }

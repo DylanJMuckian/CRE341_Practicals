@@ -38,7 +38,7 @@ public class AI_FSM : MonoBehaviour
     {
         if (fsm_anim.GetCurrentAnimatorStateInfo(0).IsName("Patrol")) 
         {
-            Debug.Log("Patrol State");
+            // Debug.Log("Patrol State");
             AIState_Patrol.enabled = true; 
             AIState_Chase.enabled = false;
             AIState_Attack.enabled = false;
@@ -73,7 +73,7 @@ public class AI_FSM : MonoBehaviour
 
     void TopLevelFSMProcessing()
     {
-        Debug.Log("Player Visible = " + playerVisible);
+        // Debug.Log("Player Visible = " + playerVisible);
         if (playerVisible)
         {
             // note that hysterisis is used to prevent the FSM from flickering between states

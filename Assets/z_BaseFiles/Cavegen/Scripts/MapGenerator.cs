@@ -469,7 +469,7 @@ public class MapGenerator : MonoBehaviour {
     {
 		Debug.Log("Restart");
         Vector3 randomPlayerPos = GetRandomGroundPoint();
-        Debug.Log("Player Pos: " + randomPlayerPos);
+        // Debug.Log("Player Pos: " + randomPlayerPos);
 
         player.transform.position = randomPlayerPos;
 

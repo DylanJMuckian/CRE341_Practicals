@@ -59,6 +59,7 @@ public class GM : MonoBehaviour
 
     public void CollectItem()
     {
+        Debug.Log("collected count = " + collectedCount);
         collectedCount++;
         
         if (collectedCount >= totalCollectibles)
