@@ -1,24 +1,18 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
-    // UI text element to display the score
-    public Text scoreText;
+    [SerializeField]
+    private TextMeshProUGUI inputScore;
+    [SerializeField]
+    private TMP_InputField inputName;
 
-    // Current score
-    private int score = 0;
+    public UnityEvent<string, int> SubmitScoreEvent;
 
-    // Method to add score
-    public void AddScore(int amount)
+    public void SubmitScore()
     {
-        score += amount;
-        UpdateScoreDisplay();
-    }
-
-    // Method to update the score display on UI
-    private void UpdateScoreDisplay()
-    {
-        scoreText.text = "Collected: " + score.ToString();
+        SubmitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
     }
 }

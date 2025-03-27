@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ScoreManager2.instance.AddScore(value);
+             ScoreManager2.instance.AddScore(value);
             Destroy(gameObject);  // Remove collectible
         }
     }
