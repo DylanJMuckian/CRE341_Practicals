@@ -9,10 +9,10 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private TMP_InputField inputName;
 
-    public UnityEvent<string, int> SubmitScoreEvent;
+    public UnityEvent<string, int> submitScoreEvent;
 
     public void SubmitScore()
     {
-        SubmitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
+        submitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
     }
 }

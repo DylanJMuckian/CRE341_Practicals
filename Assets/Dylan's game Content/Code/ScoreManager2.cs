@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager2 : MonoBehaviour
 {
     public static ScoreManager2 instance;  // Singleton pattern
-    public Text scoreText;  // Assign in UI
+    public TextMeshProUGUI scoreText;  // Assign in UI
     private int score = 0;
 
     private void Awake()
@@ -15,7 +16,7 @@ public class ScoreManager2 : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "Collected: " + score;
+        scoreText.text = " " + score;
     }
 
 }
