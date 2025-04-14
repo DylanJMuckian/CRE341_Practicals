@@ -725,22 +725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   names:
   - {fileID: 1650047393}
-  - {fileID: 701332048}
-  - {fileID: 945476960}
-  - {fileID: 441983906}
-  - {fileID: 1867809123}
-  - {fileID: 691476007}
-  - {fileID: 2014004594}
-  - {fileID: 537575039}
   scores:
   - {fileID: 1159895527}
-  - {fileID: 535356988}
-  - {fileID: 102960416}
-  - {fileID: 1816324238}
-  - {fileID: 1794510048}
-  - {fileID: 2061263307}
-  - {fileID: 1339341803}
-  - {fileID: 1160278857}
 --- !u!4 &473567983
 Transform:
   m_ObjectHideFlags: 0
