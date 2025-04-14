@@ -10,6 +10,7 @@ TagManager:
   - NPC
   - Waypoint
   - Collectible
+  - Enemy
   layers:
   - Default
   - TransparentFX

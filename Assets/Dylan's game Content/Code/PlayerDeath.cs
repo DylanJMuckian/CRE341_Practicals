@@ -1,20 +1,20 @@
 using UnityEngine;
 using Dan.Main;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerDeath : MonoBehaviour
 {
+    public GameObject LeaderBoard; 
 
-    public GameObject playerHit;
-    public void PlayerHit()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (playerHit == true)
+        if (collision.gameObject.CompareTag("NPC"))
         {
-           // GetLeaderboard();
-
-           // Destroy(Player);
+            Time.timeScale = 0;
+            Debug.Log("Game Paused");
+            LeaderBoard.SetActive(true);
         }
     }
-
 
 }
