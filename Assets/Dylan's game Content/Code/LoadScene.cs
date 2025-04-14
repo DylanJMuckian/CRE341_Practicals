@@ -9,6 +9,7 @@ public class LoadScene : MonoBehaviour
     public void SceneLoad()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     public void EndGame()

@@ -15,6 +15,11 @@ public class PlayerDeath : MonoBehaviour
             Debug.Log("Game Paused");
             LeaderBoard.SetActive(true);
         }
+        else
+        {
+            LeaderBoard.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 
 }

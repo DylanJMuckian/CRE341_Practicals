@@ -790,7 +790,7 @@ MonoBehaviour:
   player: {fileID: 1559428518}
   npcPrefab: {fileID: 6469297496258522963, guid: 382c329c781520c4285484ea9f96a87f, type: 3}
   waypointsPrefab: {fileID: 8560873365045129249, guid: 60359ab39d3ed3f42ab598c7b21b9ebd, type: 3}
-  coinPrefab: {fileID: 3651568075111793601, guid: 8d89c6f486e175245a25e1e8626f865e, type: 3}
+  coinPrefab: {fileID: 7215659860041726565, guid: 050e29c7de666e84d8b9276f370194ad, type: 3}
   groundObject: {fileID: 631091595}
   width: 128
   height: 128
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 3fa10e3473294404bbc20ecff4b94ea0, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &797153121
 Transform:
@@ -3758,7 +3758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1473839365
 RectTransform:
   m_ObjectHideFlags: 0
